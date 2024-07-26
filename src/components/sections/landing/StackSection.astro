@@ -1,0 +1,81 @@
+---
+const { title, subTitle } = Astro.props;
+
+interface Props {
+  title: string;
+  subTitle?: string;
+}
+---
+
+<section
+  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+  <!-- Title and description -->
+  <div class="mx-auto mb-6 w-full space-y-1 text-center sm:w-3/4 lg:w-2/3">
+    <h2
+      class="text-balance text-2xl font-bold leading-tight text-neutral-800 dark:text-neutral-200 sm:text-3xl"
+    >
+      {title}
+    </h2>
+    {subTitle && (
+      <p class="text-pretty leading-tight text-neutral-600 dark:text-neutral-400">
+        {subTitle}
+      </p>
+    )}
+  </div>
+  
+  <div class="slider">
+    <div class="slide-track">
+      <img src="/src/components/javascript.png" alt="logo" class="slide"/>
+      <img src="/src/components/typescript.png" alt="logo" class="slide"/>
+      <img src="/src/components/expressjs.png" alt="logo" class="slide"/>
+      <img src="/src/components/nodejs.png" alt="logo" class="slide"/>
+      <img src="/src/components/vuejs.png" alt="logo" class="slide"/>
+      <img src="/src/components/mysql.png" alt="logo" class="slide"/>
+      <img src="/src/components/react.png" alt="logo" class="slide"/>
+      <img src="/src/components/nextjs.png" alt="logo" class="slide invert-logo"/>
+      <!-- Duplicate slides for smooth infinite scrolling -->
+      <img src="/src/components/javascript.png" alt="logo" class="slide"/>
+      <img src="/src/components/typescript.png" alt="logo" class="slide"/>
+      <img src="/src/components/expressjs.png" alt="logo" class="slide"/>
+      <img src="/src/components/nodejs.png" alt="logo" class="slide"/>
+      <img src="/src/components/vuejs.png" alt="logo" class="slide"/>
+      <img src="/src/components/mysql.png" alt="logo" class="slide"/>
+      <img src="/src/components/react.png" alt="logo" class="slide"/>
+      <img src="/src/components/nextjs.png" alt="logo" class="slide invert-logo"/>
+    </div>
+  </div>
+</section>
+
+<style>
+  .slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slide-track {
+    display: flex;
+    width: calc(250px * 14); /* 250px is the width of each slide image, 14 is the number of images */
+    animation: scroll 30s linear infinite;
+  }
+  
+  .slide {
+    width: 150px; /* width of each image */
+    height: auto;
+    padding: 40px;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 5)); /* total width of half the images */
+    }
+  }
+
+  .invert-logo {
+    filter: invert(100%) brightness(200%);
+  }
+</style>

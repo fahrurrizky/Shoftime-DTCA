@@ -1,0 +1,253 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import StackSection from "@components/sections/landing/StackSection.astro";
+import FeaturesMajecticMixer from "@/components/sections/features/FeaturesMajecticMixer.astro";
+import FeaturesRabiberes from "@/components/sections/features/FeaturesRabiberes.astro";
+import FeaturesAdminRabiberes from "@/components/sections/features/FeaturesAdminRabiberes.astro";
+import FeaturesBeeyondThePages from "@/components/sections/features/FeaturesBeeyondThePages.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import FAQ from "@components/sections/FAQ.astro";
+// import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import heroImage from "@images/webstack.png";
+import faqs from "@data/faqs.json";
+import majesticMixer from "@/data_files/features/majesticMixer.json";
+import rabiberes from "@/data_files/features/rabiberes.json";
+import adminRabiberes from "@/data_files/features/adminRabiberes.json";
+import beeyondThePages from "@/data_files/features/beeyondThePages.json";
+import pricing from "@data/pricing.json";
+import featureImage1 from "@images/majesticmixer.png";
+import featureImage2 from "@images/rabiberes.png";
+import featureImage3 from "@images/adminRabiberes.png";
+import featureImage4 from "@images/beeyondthepages.png";
+import designProduct from "@images/mockupIphone.png";
+import digitalMarketing from "@images/seo.svg";
+import dashboard from "@images/softwareMockup.png";
+
+const avatarSrcs: Array<string> = [
+  "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+];
+---
+
+<MainLayout>
+  <!-- <AnnouncementBanner
+    btnId="dismiss-button"
+    btnTitle="Explore ScrewFast on GitHub"
+    url="https://github.com/mearashadowfax/ScrewFast"
+  /> -->
+
+  <HeroSection
+    title={`Empower Your Business with <span class="text-yellow-500 dark:text-yellow-400">Shoftime\`Tech</span>`}
+    subTitle="Through our agency and consulting services to elevate your bussiness and achieve outstanding results."
+    primaryBtn="Discover Our Services"
+    primaryBtnURL="/services"
+    secondaryBtn="Get In Touch"
+    secondaryBtnURL="/contact"
+    withReview={true}
+    avatars={avatarSrcs}
+    rating={`<span class="font-bold">4.8</span> / 5`}
+    starCount={4}
+    reviews={`From Over <span class="font-bold">5</span> Reviews`}
+    src={heroImage}
+    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+  />
+
+  <ClientsSection
+    title="Our Optimized Partners"
+    subTitle="Optimization is endless journey. Technology provide a lot of business process improvement."
+  />
+  <section class="features-slider">
+    <div class="features-slider-item active">
+      <FeaturesMajecticMixer
+        title="POS for Majectic Mixer"
+        src={featureImage1}
+        subTitle="We have created an incredible Point of Sale (POS) or Cashier Application designed to transform retail operations for alcoholic beverage stores from Majestic Mixer. Let's look at the important things."
+        alt="POS for Majectic Mixer"
+        features={majesticMixer}
+      />
+    </div>
+    <div class="features-slider-item">
+      <FeaturesRabiberes
+        title="Platform for Wedding Organizers rabiberes.com"
+        src={featureImage2}
+        subTitle="rabiberes.com is a platform that connects wedding organizers with vendors who can offer their services. It is designed to be user friendly and easy to use, and users can customize whatever vendor they want."
+        alt="Platform for weddings Organizers"
+        features={rabiberes}
+      />
+    </div>
+    <div class="features-slider-item">
+      <FeaturesAdminRabiberes
+        title="Admin Panel for weddings Organizers rabiberes.com"
+        src={featureImage3}
+        subTitle="The admin panel for the platform rabiberes.com provides users with everything they need to manage their wedding. It includes features such as managing vendors, managing orders, managing inventory, and ordering customers."
+        alt="ScrewFast products in floating boxes"
+        features={adminRabiberes}
+      />
+    </div>
+    <div class="features-slider-item">
+      <FeaturesBeeyondThePages
+        title="Blogging Website of Beeyond The Pages"
+        subTitle="Beeyond the Pages is a cutting-edge blog platform designed to empower anyone and everyone. Whether you're a you can use it to share your knowledge, we designed it to be user-friendly and easy to use."
+        src={featureImage4}
+        alt="Blogging Website of Beeyond The Pages"
+        features={beeyondThePages}
+      />
+    </div>
+  </section>
+  <FeaturesNavs
+    title={`Moving Forward with <span class="text-yellow-500 dark:text-yellow-400">Shoftime\`Tech</span>, We're not exactly a software house, although we build great ones.`}
+    tabs={[
+      {
+        heading: "Design Products & Design Logo",
+        content:
+          "Exceptional product and logo design are essential for building a strong brand identity. Our design team specializes in creating visually appealing and memorable designs that resonate with your target audience. From product packaging to logo creation, we ensure that every design element aligns with your brand's vision and values, helping you stand out in a competitive market.",
+        svg: "books",
+        src: designProduct,
+        alt: "Gray metal building frame near tower crane during daytime",
+        first: true,
+      },
+      {
+        heading: "Web/Mobile App System Development",
+        content:
+          "Good Web and Mobile Applications are one of the key factors for business success. They ensure a seamless user experience, improve operational efficiency, and drive business growth. By utilizing the latest technology and best practices, our development team will deliver a system that suits your business needs.",
+        svg: "desktop",
+        src: dashboard,
+        alt: "Web/Mobile App System Development",
+      },
+      {
+        heading: "Digital Marketing",
+        content:
+          "Effective digital marketing is crucial for reaching your target audience and achieving business success. Our digital marketing services include SEO, social media marketing, email marketing, and content marketing, all designed to increase brand awareness, drive traffic, and generate leads. By leveraging data-driven strategies and innovative tools, we help your business thrive in the digital landscape.",
+        svg: "software",
+        src: digitalMarketing,
+        alt: "A screenshot or graphic representation of the intuitive dashboard",
+      },
+    ]}
+  />
+
+  <StackSection
+    title="Our Technologies in Our Daily Work"
+    subTitle="We have a deep understanding of the latest technologies and tools to help our clients achieve their goals."
+  />
+
+  <TestimonialsSection
+    title="BUILD TRUST EMPOWER OTHERS"
+    subTitle="Our vision is to become a business partner by understanding our customers' needs and continuing to innovate on their behalf to continue building mutually beneficial relationships."
+    ;
+    testimonials={[
+      {
+        content:
+          "We are thrilled with the outstanding work delivered by [Shoftime\`Tech] in creating rabiberes.com. The team's expertise and dedication resulted in a platform that is not only visually stunning but also highly functional and user-friendly. Their attention to detail and ability to understand our needs made the entire development process seamless. ",
+        author: "Dicky Aditya",
+        role: "Owner from rabiberes.com.",
+        avatarSrc:
+          "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+      },
+    ]}
+    statistics={[
+      {
+        count: "20%",
+        description:
+          "clients served — from startups to established enterprises",
+      },
+      {
+        count: "50%",
+        description:
+          "increase in user engagement with our web and mobile app solutions",
+      },
+      {
+        count: "40%",
+        description:
+          "boost in ROI for clients utilizing our digital marketing services",
+      },
+      {
+        count: "2x",
+        description: "faster project turnaround time with our agile development approach",
+      },
+    ]}
+  />
+
+  <PricingSection pricing={pricing} />
+
+  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+
+  <HeroSectionAlt
+    title="Let's Grow Together"
+    subTitle="We're always looking for ways to improve our products and services. If you have any suggestions or feedback, please don't hesitate to reach out. We'd love to hear from you!"
+    url="https://github.com/mearashadowfax/ScrewFast"
+  />
+</MainLayout>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.features-slider-item');
+    const totalSlides = slides.length;
+    const slideInterval = 4000;
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % totalSlides;
+      slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(nextSlide, slideInterval);
+  </script>
+
+<style>
+  .features-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .features-slider-item {
+    flex: 0 0 100%;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+
+  .features-slider-item.active {
+    opacity: 1;
+    position: relative;
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .features-slider-item.active:nth-child(odd) {
+    animation: slideInFromRight 1.5s forwards;
+  }
+
+  .features-slider-item.active:nth-child(even) {
+    animation: slideInFromLeft 1.5s forwards;
+  }
+</style>

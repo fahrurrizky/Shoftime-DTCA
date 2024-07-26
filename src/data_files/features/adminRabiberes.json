@@ -1,0 +1,22 @@
+[
+  {
+    "heading": "Personal Touch",
+    "content": "Admins have the freedom to update and customize vendor profiles, ensuring each listing reflects accurate and appealing information.",
+    "svg": "groups"
+  },
+  {
+    "heading": "Orders Confirmation",
+    "content": "From receiving to confirming orders, admins can efficiently handle all aspects of order management, ensuring timely and accurate processing.",
+    "svg": "verified"
+  },
+  {
+    "heading": "Product Proficiency",
+    "content": "Admins effortlessly navigate through product lists, leveraging filters for categories and names, and even sorting items alphabetically and by price. This makes inventory management simple and effective.",
+    "svg": "books"
+  },
+  {
+    "heading": "Admin Mastery",
+    "content": "Admins have complete control over the platform, from managing user accounts to overseeing the entire operation, ensuring everything runs smoothly and efficiently.",
+    "svg": "frame"
+  }
+]

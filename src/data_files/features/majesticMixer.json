@@ -1,0 +1,22 @@
+[
+  {
+    "heading": "Personal Touch",
+    "content": "Cashiers have the freedom to update their profile photos, adding a personalized touch to their interactions.",
+    "svg": "groups"
+  },
+  {
+    "heading": "Smooth Transactions",
+    "content": "From payments to purchases, cashiers facilitate seamless transactions for enhanced customer experiences.",
+    "svg": "verified"
+  },
+  {
+    "heading": "Product Proficiency",
+    "content": "Cashiers effortlessly navigate through product lists, leveraging filters for categories and names, and even sorting items alphabetically and by price.",
+    "svg": "books"
+  },
+  {
+    "heading": "Admin Mastery",
+    "content": "Admins step in with the power to manage users, create, update, and delete cashiers, and exercise control over product lists and categories.",
+    "svg": "frame"
+  }
+]

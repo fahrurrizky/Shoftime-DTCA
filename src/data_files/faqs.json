@@ -1,0 +1,25 @@
+{
+  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "faqs": [
+    {
+      "question": "What services does your company offer?",
+      "answer": "We offer a range of services including software development, web design, search engine optimization (SEO), social media marketing, and digital marketing strategies to help your business grow online."
+    },
+    {
+      "question": "How long does it typically take to complete a project?",
+      "answer": "The timeline for a project varies depending on its complexity and scope. We will provide an estimated timeline after discussing your project’s needs and specifications."
+    },
+    {
+      "question": "What sets your company apart from competitors?",
+      "answer": "We prioritize an integrated and personalized approach to every project. Our team consists of experts in various fields, allowing us to deliver solutions tailored to our clients' specific needs."
+    },
+    {
+      "question": "How can I start working with your company?",
+      "answer": "You can start by contacting us through the contact form on our website or directly via email. We will schedule a meeting to discuss your needs and design a suitable plan."
+    },
+    {
+      "question": "Do you provide support after the project is completed?",
+      "answer": "Yes, we offer post-project support to ensure that all the solutions we implement are functioning correctly and to assist with maintenance or updates if needed."
+    }
+  ]
+}

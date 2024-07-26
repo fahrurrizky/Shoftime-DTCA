@@ -1,0 +1,34 @@
+{
+  "title": "The Services We Provide",
+  "subTitle": "Boost your business with our comprehensive web and app development and digital marketing solutions.",
+  "badge": "Best Value",
+  "thirdOption": "Anything asking?",
+  "btnText": "Lest talk",
+
+  "starterKit": {
+    "name": "Starter Package",
+    "description": "Ideal for small businesses and startups",
+    "features": [
+      "Basic website or app development",
+      "SEO and social media integration",
+      "Standard support",
+      "Analytics dashboard"
+    ],
+    "purchaseBtnTitle": "Get the Starter Package",
+    "purchaseLink": "https://wa.me/6281339541611?text=Hello,%20I%20am%20interested%20in%20the%20Starter%20Package.%20Can%20you%20provide%20more%20details?"
+  },
+
+  "professionalToolbox": {
+    "name": "Professional Package",
+    "description": "Best for growing businesses",
+    "features": [
+      "Assist in the Product requirements document process",
+      "Advanced website or app development",
+      "Comprehensive digital marketing services",
+      "Analytics dashboard",
+      "Custom analytics and reporting"
+    ],
+    "purchaseBtnTitle": "Get the Professional Package",
+    "purchaseLink": "https://wa.me/6281339541611?text=Hello,%20I%20am%20interested%20in%20the%20Professional%20Package.%20Can%20you%20provide%20more%20details?"
+  }
+}
