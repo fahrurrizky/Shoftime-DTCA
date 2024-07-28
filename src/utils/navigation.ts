@@ -3,7 +3,7 @@ const navBarLinks = [
   { name: "Home", url: "/" },
   { name: "About Us", url: "/about" },
   { name: "Services", url: "/services" },
-  { name: "Our Team", url: "/blog" },
+  { name: "Our Team", url: "/our-team" },
   { name: "Portfolio", url: "/contact" },
   { name: "Contact", url: "/contact" },
 ];
@@ -23,7 +23,7 @@ const footerLinks = [
       { name: "About Us", url: "/about" },
       { name: "Services", url: "/services" },
       { name: "Careers", url: "#" },
-      { name: "Customers", url: "/contact" },
+      { name: "Our Team", url: "/our-team" },
     ],
   },
 ];

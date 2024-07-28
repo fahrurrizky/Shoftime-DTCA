@@ -157,6 +157,27 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"post-4.md": {
+	id: "post-4.md";
+  slug: "post-4";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"post-5.md": {
+	id: "post-5.md";
+  slug: "post-5";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"post-6.md": {
+	id: "post-6.md";
+  slug: "post-6";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 "docs": {
 "advanced/technical-specifications.mdx": {
@@ -423,6 +444,27 @@ declare module 'astro:content' {
 "insight-3.md": {
 	id: "insight-3.md";
   slug: "insight-3";
+  body: string;
+  collection: "insights";
+  data: InferEntrySchema<"insights">
+} & { render(): Render[".md"] };
+"insight-4.md": {
+	id: "insight-4.md";
+  slug: "insight-4";
+  body: string;
+  collection: "insights";
+  data: InferEntrySchema<"insights">
+} & { render(): Render[".md"] };
+"insight-5.md": {
+	id: "insight-5.md";
+  slug: "insight-5";
+  body: string;
+  collection: "insights";
+  data: InferEntrySchema<"insights">
+} & { render(): Render[".md"] };
+"insight-6.md": {
+	id: "insight-6.md";
+  slug: "insight-6";
   body: string;
   collection: "insights";
   data: InferEntrySchema<"insights">

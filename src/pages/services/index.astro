@@ -1,0 +1,128 @@
+---
+// Importing necessary components
+import MainLayout from "../../layouts/MainLayout.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import CardSmall from "@components/ui/cards/CardSmall.astro";
+import CardWide from "@components/ui/cards/CardWide.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import AftersalesStatsAlt from "@components/sections/features/AftersalesStatsAlt.astro";
+import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
+
+// Importing necessary functions from Astro
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+
+// Fetching all the product related content and sorting it by main.id
+const product: CollectionEntry<"products">[] = (
+  await getCollection("products")
+).sort(
+  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+    a.data.main.id - b.data.main.id,
+);
+
+// Define variables for page content
+const title: string = "What we can do ?";
+const subTitle: string =
+  "At Shoftime, we are committed to delivering excellence and innovation. Partner with us to leverage our expertise and take your digital presence to the next level.";
+
+// Testimonial data that will be rendered in the component
+const testimonials = [
+  // First testimonial data
+  {
+    content:
+      " \"Shoftime transformed our wedding organizing business with a stunning website and a highly flexible admin panel. We can easily manage products, transactions, and promotions, allowing us to quickly adapt to market changes. Their tailored solution has streamlined our operations and improved client interactions significantly. We’re thrilled with the results.\" ",
+    author: "Diky Aditya",
+    role: "Owner rabiberes.com",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  // Second testimonial data
+  {
+    content:
+      " \"Shoftime delivered an exceptional custom POS system for our retail business. The system’s intuitive interface allows us to handle transactions efficiently, manage inventory, and track sales data with ease. The flexibility to customize reports and promotions has greatly enhanced our operational efficiency and customer service.\" ",
+    author: "Samuel",
+    role: "Owner Liquor Store-The Majestic Mixer",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  // Third testimonial data
+  {
+    content:
+      " \"Shoftime designed a fantastic blog website for us. The platform’s sleek design and user-friendly features make it easy to publish and manage content. We can effortlessly organize posts, engage with our audience. The tailored solution has significantly enhanced our online presence and content management. We’re thrilled with the results and the exceptional support provided.\" ",
+    author: "Alleta",
+    role: "Founder Beeyond The Pages",
+    avatarSrc:
+    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+];
+
+const pageTitle: string = `Services | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+>
+<FeaturesStatsAlt
+    title="Why Shoftime`Tech"
+    subTitle="Transform your vision into impactful digital solutions with Shoftime. Whether you’re launching a new app, developing a compelling marketing strategy, or crafting a unique design, our expertise and innovative team are to help you succeed with confidence."
+    benefits={[
+      "Cutting-Edge Digital Solutions: We offer robust and reliable technology and design services that ensure your digital projects stand out and perform excellently.",
+      "Tailored Innovations: Our solutions are customized to meet the evolving needs of the digital landscape, providing modern and effective strategies that drive results.",
+      "Dedicated Support: Our team is committed to your project's success, offering comprehensive support and guidance every step of the way to ensure your goals are achieved.",
+    ]}
+  />
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+      <div class="flex items-center gap-12">
+        <h1
+          class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        >
+          {title}
+        </h1>
+        {
+          subTitle && (
+            <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
+              {subTitle}
+            </p>
+          )
+        }
+      </div>
+      <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} />
+    </div>
+    <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
+    <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
+    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+      {
+        product.map((product, index) => {
+          const position = index % 4;
+          if (position === 0 || position === 3) {
+            return <CardSmall product={product} />;
+          } else {
+            return <CardWide product={product} />;
+          }
+        })
+      }
+    </section>
+  </div>
+  <!--Features statistics section-->
+  <AftersalesStatsAlt
+    title="Whats After-Sales Service"
+    subTitle="At Shoftime, our commitment to your success extends beyond the initial project. Our dedicated after-sales services ensure that your digital solutions continue to perform at their best and evolve with your needs."
+    benefits={[
+      "Ongoing Support and Maintenance: We provide continuous support to address any issues, updates, or improvements needed to keep your digital solutions running smoothly.",
+      "Performance Optimization: Our team analyzes and enhances the performance of your projects, ensuring they stay up-to-date with the latest technological advancements.",
+      "Customer Success Focus: We work closely with you to understand your evolving needs and provide proactive solutions, ensuring your long-term satisfaction and success."
+    ]}
+  />
+  <!--Testimonials section-->
+  <TestimonialsSectionAlt
+    title="What Our Clients Say"
+    testimonials={testimonials}
+  />
+</MainLayout>

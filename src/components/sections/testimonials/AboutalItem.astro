@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import Icon from "@components/ui/icons/Icon.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+
+const { content, btnExists, btnTitle, btnURL  } = Astro.props;
+
+interface Props {
+  content: string;
+  btnExists?: boolean;
+  btnTitle?: string;
+  btnURL?: string;
+}
+---
+
+<blockquote class="relative">
+  <Icon name="quotation" />
+
+  <div class="relative z-10">
+    <p class="text-xl italic text-neutral-800 dark:text-neutral-200">
+      {content}
+    </p>
+  </div>
+  {
+    btnExists ? (
+      <div class="flex flex-col mt-5 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+        <PrimaryCTA title={btnTitle} url={btnURL} />
+      </div>
+    ) : null
+  }
+</blockquote>

@@ -1,13 +1,14 @@
 ---
-title: "Simplify Procurement and Stay Within Budget with ScrewFast"
-description: "Affordable, durable tools for efficient construction projects"
-author: "Olga Zabegina"
-role: "Strategic Marketing Manager"
-authorImage: "@/images/blog/anna.avif"
+title: "We are what repeatedlly do. Excellence, then, is not an act but a habit."
+description: "Now working at Stechoq Robotika Indonesia"
+author: "M. Fahrur Rizky"
+role: "Founder, Project Management, Web Developer"
+cardImageAlt: https://fahrurrizky.site/
+authorImage: "@/images/blog/rizky.jpeg"
 authorImageAlt: "Avatar Description"
 pubDate: 2024-02-18
-cardImage: "@/images/blog/post-3.avif"
-cardImageAlt: "Side view worker wearing gloves"
+cardImage: "@/images/blog/rizky1.jpg"
+# cardImageAlt: "Side view worker wearing gloves"
 readTime: 3
 tags: ["procurement", "affordable", "efficiency" ]
 contents: [

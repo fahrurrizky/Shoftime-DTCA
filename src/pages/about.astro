@@ -1,0 +1,198 @@
+---
+// Import necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import LeftSection from "@components/ui/blocks/LeftSection.astro";
+import RightSection from "@components/ui/blocks/RightSection.astro";
+import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
+import AboutSection from "@components/sections/testimonials/AboutSection.astro";
+import AboutsSection from "@components/sections/landing/AboutsSection.astro";
+
+// Import necessary images
+import blueprints from "@images/Iterative-cycles1.jpg";
+import personWorking from "@images/Iterative-cycles2.jpg";
+import beforeAfter from "@images/Incremental-development.jpg";
+import constructionWorkers from "@images/Frequent-communication1.jpg";
+import aerialView from "@images/Frequent-communication2.jpg";
+import usingTools from "@images/Time-boxing.jpg";
+import progressBuilding from "@images/Retrospectives1.jpg";
+import underConstruction from "@images/Retrospectives2.jpeg";
+import { SITE } from "@data/constants";
+
+interface Article {
+  isRightSection: boolean;
+  title: string;
+  subTitle: string;
+  btnExists?: boolean;
+  btnTitle?: string;
+  btnURL?: string;
+  single?: boolean;
+  img?: any;
+  imgAlt?: string;
+  imgOne?: any;
+  imgOneAlt?: string;
+  imgTwo?: any;
+  imgTwoAlt?: string;
+}
+
+const articles: Article[] = [
+  {
+    isRightSection: true,
+    title: "Iterative cycles",
+    subTitle:
+      "Teams follow a repeatable cycle of development activities such as planning, design, development, testing, and deployment. Each iteration provides an opportunity to incorporate feedback and deliver a better product.",
+    single: false,
+    imgOne: blueprints,
+    imgOneAlt: "Blueprints and digital tablet with construction plans.",
+    imgTwo: personWorking,
+    imgTwoAlt: "Person working in the office",
+  },
+  {
+    isRightSection: false,
+    title: "Incremental development",
+    subTitle:
+      "Developers break down large projects into smaller, more manageable units of work. Since each batch of work builds on previous increments, your product is constantly being improved. Updates come early in the process versus in a single release at the end of development.",
+    img: beforeAfter,
+    imgAlt: "Construction site before and after",
+  },
+  {
+    isRightSection: true,
+    title: "Frequent communication",
+    subTitle:
+      "Alignment across the entire product development team depends on ongoing communication. Regularly connecting with cross-functional teammates minimizes costly rework. Agile teams touch base on capacity, work status, and any issues that need to be addressed.",
+    single: false,
+    imgOne: constructionWorkers,
+    imgOneAlt: "Construction workers orchestrating a project",
+    imgTwo: aerialView,
+    imgTwoAlt: "Aerial view of managed construction",
+  },
+  {
+    isRightSection: false,
+    title: "Time-boxing",
+    subTitle:
+      "Time-boxing is a critical concept in Agile methodologies that involves setting a fixed duration for a specific task or activity. This technique helps teams manage their time effectively and ensures that work progresses steadily without extending indefinitely.",
+    img: usingTools,
+    imgAlt:
+      "Man in orange and black vest wearing white helmet holding yellow and black power tool",
+  },
+  {
+    isRightSection: true,
+    title: "Retrospectives",
+    subTitle:
+      "Team members check in with one another at regular intervals (typically after a set time-boxed period like a sprint) to reflect on how to improve processes going forward. Agile retrospectives facilitate the kind of transparent, open communication that allows teams to constantly evolve.",
+    single: false,
+    imgOne: progressBuilding,
+    imgOneAlt: "In progress building structure",
+    imgTwo: underConstruction,
+    imgTwoAlt: "Brown and gray building under construction",
+  },
+];
+
+const pageTitle: string = `About | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://screwfast.uk/services",
+    "url": "https://screwfast.uk/services",
+    "name": "Expert Consultation Services | ScrewFast",
+    "description": "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
+    "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://screwfast.uk",
+        "name": "ScrewFast",
+        "description": "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+<AboutSection
+  title="WE'RE NOT COMPANY,  WE'RE THE A TEAM MEET IN THE SHOFT TIME"
+  subTitle="Our vision is to become a business partner by understanding our customers' needs and continuing to innovate on their behalf to continue building mutually beneficial relationships."
+  testimonials={[
+    {
+      content:
+        "Welcome to Shoftime, we're digital technology creative agency dedicated to transforming ideas into innovative solutions. At Shoftime, we specialize in crafting bespoke digital experiences that drive success and growth for our clients. Our expertise spans across multiple domains.",
+      showButton: true,
+      buttonTitle: "Schedule a Consultation",
+      buttonURL: "https://wa.me/6281339541611"
+    },
+  ]}
+  statistics={[
+    {
+      svg: "desktop",
+      description:
+        "Custom System Dashboards and Website",
+    },
+    {
+      svg: "chart",
+      description:
+        "Digital Marketing and Social Media Management",
+    },
+    {
+      svg: "design",
+      description:
+        "Design Product-Branding Logo and Packaging",
+    },
+    {
+      svg: "video",
+      description: "Video Editing and Motion Graphics",
+    },
+  ]}
+/>
+<AboutsSection
+title="Process of Project and Product Development"
+subTitle="Agile development is a group of software development methodologies that are based on the same principles or short-term system development that requires rapid adaptation of developers to changes of any kind."
+/>
+  {
+    articles.map(article => {
+      return article.isRightSection ? (
+        <RightSection
+          title={article.title}
+          subTitle={article.subTitle}
+          single={article.single}
+          imgOne={article.imgOne}
+          imgOneAlt={article.imgOneAlt}
+          imgTwo={article.imgTwo}
+          imgTwoAlt={article.imgTwoAlt}
+          btnExists={article.btnExists}
+          btnTitle={article.btnTitle}
+          btnURL={article.btnURL}
+        />
+      ) : (
+        <LeftSection
+          title={article.title}
+          subTitle={article.subTitle}
+          img={article.img}
+          imgAlt={article.imgAlt}
+          btnExists={article.btnExists}
+          btnTitle={article.btnTitle}
+          btnURL={article.btnURL}
+        />
+      );
+    })
+  }
+  <!--FeaturesStats section showcases essential stats valuable to users-->
+  <FeaturesStats
+    title="By the Numbers"
+    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At Shoftime`Tech, we are dedicated to providing the best service to our clients and ensuring the projects we undertake are a success."
+    mainStatTitle="96%"
+    mainStatSubTitle="of our clients rate their experience with Shoftime`Tech as exceptional"
+    stats={[
+      {
+        stat: "99.8%",
+        description: "Project completion rate",
+      },
+      {
+        stat: "5+",
+        description: "Successful installations",
+      },
+      {
+        stat: "85%",
+        description: "Client business growth after partnering with us",
+      },
+    ]}
+  />
+</MainLayout>

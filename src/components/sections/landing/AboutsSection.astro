@@ -1,0 +1,70 @@
+---
+const { title, subTitle } = Astro.props;
+
+interface Props {
+  title: string;
+  subTitle?: string;
+}
+---
+
+<section
+  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+  <!-- Title and description -->
+  <div class="mx-auto mb-6 w-full space-y-1 text-center sm:w-3/4 lg:w-2/3">
+    <h2
+      class="text-balance text-2xl font-bold leading-tight text-neutral-800 dark:text-neutral-200 sm:text-3xl"
+    >
+      {title}
+    </h2>
+    {subTitle && (
+      <p class="text-pretty leading-tight text-neutral-600 dark:text-neutral-400">
+        {subTitle}
+      </p>
+    )}
+  </div>
+  
+  <div class="slider text-neutral-600 dark:text-neutral-400">
+    <div class="slide-track">
+      <p>Iterative cycles</p>
+      <p>Incremental development</p>
+      <p>Frequent communication</p>
+      <p>Time-boxing</p>
+      <p>Retrospectives</p>
+      <!-- Duplicate slides for smooth infinite scrolling -->
+      <p>Iterative cycles</p>
+      <p>Incremental development</p>
+      <p>Frequent communication</p>
+      <p>Time-boxing</p>
+      <p>Retrospectives</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track {
+  display: flex;
+  gap: 20px; /* Adjust the value to set the spacing between text items */
+  width: calc(250px * 14); /* 250px is the width of each slide item, 14 is the number of items */
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 5)); /* total width of half the items */
+  }
+}
+
+.invert-logo {
+  filter: invert(100%) brightness(200%);
+}
+</style>
