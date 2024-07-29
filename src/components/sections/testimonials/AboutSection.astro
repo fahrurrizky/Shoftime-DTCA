@@ -44,7 +44,7 @@ type StatProps = {
         <h2
           class="mb-2 text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
         >
-          {title}
+        <Fragment set:html={title} />
         </h2>
         {subTitle &&
         <p class="text-neutral-600 dark:text-neutral-400">

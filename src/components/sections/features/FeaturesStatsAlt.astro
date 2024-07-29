@@ -30,7 +30,7 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
           <h2
             class="text-balance text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
           >
-            {title}
+          <Fragment set:html={title} />
           </h2>
           {
             subTitle && (

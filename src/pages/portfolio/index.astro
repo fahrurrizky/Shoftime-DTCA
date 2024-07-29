@@ -1,0 +1,69 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import CardSmall from "../../components/ui/cards/CardSmall.astro";
+import CardWide from "../../components/ui/cards/CardWide.astro";
+import HeroSectionAlt from "../../components/sections/landing/HeroSectionAlt.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+
+/// Fetching all the product related content and sorting it by main.id
+const product: CollectionEntry<"products">[] = (
+  await getCollection("products")
+).sort(
+  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+    a.data.main.id - b.data.main.id,
+);
+// Get all insights posts
+const insightPosts: CollectionEntry<"insights">[] =
+  await getCollection("insights");
+
+// Define variables for page content
+const title: string = "Projects We Have";
+const subTitle: string =
+  "Explore the diverse range of projects we've successfully completed at Shoftime.Our completed projects reflect our ability to tackle complex challenges, deliver exceptional results, and drive success for businesses across various industries. We take pride in our work and are dedicated to continuously pushing the boundaries of what’s possible."
+
+const pageTitle: string = `Portfolio | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+>
+  <section
+    class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
+  >
+    <!--Page header-->
+    <div class="mx-auto max-w-3xl text-left sm:text-center">
+      <h1
+        class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+      >
+        {title.split("Portfolio")[0]}
+        <span class="text-yellow-500 dark:text-yellow-400">Completed</span>
+      </h1>
+
+      <p
+        class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
+      >
+        {subTitle}
+      </p>
+    </div>
+  </section>
+  <!--Insights section-->
+  <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8 my-10">
+    {
+      product.map((product, index) => {
+        const position = index % 4;
+        if (position === 0 || position === 3) {
+          return <CardSmall product={product} />;
+        } else {
+          return <CardWide product={product} />;
+        }
+      })
+    }
+  </section>
+  <HeroSectionAlt
+  title="Let's Grow Together"
+  subTitle="We're always looking for ways to improve our products and services. If you have any suggestions or feedback, please don't hesitate to reach out. We'd love to hear from you!"
+  url="https://github.com/mearashadowfax/ScrewFast"
+/>
+</MainLayout>

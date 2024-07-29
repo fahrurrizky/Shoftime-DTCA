@@ -1,6 +1,6 @@
 ---
 import TestimonialItem from "./TestimonialItem.astro";
-import StatsGrid from "@components/ui/blocks/StatsGrid.astro";
+import StatsGridHome from "@components/ui/blocks/StatsGridHome.astro";
 
 const {
   title,
@@ -69,7 +69,7 @@ type StatProps = {
           <!-- Generate a list item for each stat in the statistics array by mapping over the array. -->
           {
             statistics.map((stat, index) => (
-            <StatsGrid count={stat.count} description={stat.description} index={index}/>
+            <StatsGridHome count={stat.count} description={stat.description} index={index}/>
             ))
           }
         </ul>

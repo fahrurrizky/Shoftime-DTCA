@@ -1,5 +1,4 @@
 ---
-// Import necessary components, modules and types
 import MainLayout from "../../layouts/MainLayout.astro";
 import CardBlog from "../../components/ui/cards/CardBlog.astro";
 // import CardBlogRecent from "../../components/ui/cards/CardBlogRecent.astro";
@@ -43,7 +42,8 @@ const pageTitle: string = `Our Team | ${SITE.title}`;
       <h1
         class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
       >
-        {title}
+        {title.split("Our Team")[0]}
+        <span class="text-yellow-500 dark:text-yellow-400">Our Team</span>
       </h1>
 
       <p
@@ -76,7 +76,8 @@ const pageTitle: string = `Our Team | ${SITE.title}`;
       <h2
         class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
       >
-        {secondTitle}
+        {secondTitle.split("Value")[0]}
+        <span class="text-yellow-500 dark:text-yellow-400">Value</span>
       </h2>
       <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
         {secondSubTitle}
