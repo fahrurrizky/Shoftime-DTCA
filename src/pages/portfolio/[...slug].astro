@@ -1,8 +1,8 @@
 ---
 // Import section components
-import MainLayout from "../../layouts/MainLayout.astro";
-import ProductTabBtn from "../../components/ui/buttons/ProductTabBtn.astro";
-import PrimaryCTA from "../../components/ui/buttons/PrimaryCTA.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import ProductTabBtn from "@components/ui/buttons/ProductTabBtn.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { SITE } from "@data/constants";
@@ -15,7 +15,7 @@ declare global {
 }
 // This gets the static paths for all the unique products
 export async function getStaticPaths() {
-  const productEntries = await getCollection("products");
+  const productEntries = await getCollection("portfolio");
   return productEntries.map((product) => ({
     params: { slug: product.slug },
     props: { product },
@@ -23,6 +23,8 @@ export async function getStaticPaths() {
 }
 
 const { product } = Astro.props;
+const imageWidth = 400;
+const imageHeight = 300;
 
 const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 ---
@@ -58,13 +60,15 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
         </p>
       </div>
       <div>
-        <Image
+        <img
           id="fadeInMoveRight"
           src={product.data.main.imgMain}
           class="w-[600px]"
           alt={product.data.main.imgAlt}
-          format={"avif"}
+
           loading={"eager"}
+          width={imageWidth}
+          height={imageHeight}
         />
       </div>
     </div>

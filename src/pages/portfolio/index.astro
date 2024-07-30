@@ -1,22 +1,19 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import CardSmall from "../../components/ui/cards/CardSmall.astro";
-import CardWide from "../../components/ui/cards/CardWide.astro";
+import CardSmallPortfolio from "../../components/ui/cards/CardSmallPortfolio.astro";
+import CardWidePortfolio from "../../components/ui/cards/CardWidePortfolio.astro";
 import HeroSectionAlt from "../../components/sections/landing/HeroSectionAlt.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-/// Fetching all the product related content and sorting it by main.id
-const product: CollectionEntry<"products">[] = (
-  await getCollection("products")
+/// Fetching all the portfolio related content and sorting it by main.id
+const portfolio: CollectionEntry<"portfolio">[] = (
+  await getCollection("portfolio")
 ).sort(
-  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+  (a: CollectionEntry<"portfolio">, b: CollectionEntry<"portfolio">) =>
     a.data.main.id - b.data.main.id,
 );
-// Get all insights posts
-const insightPosts: CollectionEntry<"insights">[] =
-  await getCollection("insights");
 
 // Define variables for page content
 const title: string = "Projects We Have";
@@ -48,22 +45,22 @@ const pageTitle: string = `Portfolio | ${SITE.title}`;
       </p>
     </div>
   </section>
-  <!--Insights section-->
+  <!--portfolio section-->
   <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8 my-10">
     {
-      product.map((product, index) => {
+      portfolio.map((portfolio, index) => {
         const position = index % 4;
         if (position === 0 || position === 3) {
-          return <CardSmall product={product} />;
+          return <CardSmallPortfolio portfolio={portfolio} />;
         } else {
-          return <CardWide product={product} />;
+          return <CardWidePortfolio portfolio={portfolio} />;
         }
       })
     }
   </section>
   <HeroSectionAlt
-  title="Let's Grow Together"
-  subTitle="We're always looking for ways to improve our products and services. If you have any suggestions or feedback, please don't hesitate to reach out. We'd love to hear from you!"
-  url="https://github.com/mearashadowfax/ScrewFast"
-/>
+    title="Let's Grow Together"
+    subTitle="We're always looking for ways to improve our portfolios and services. If you have any suggestions or feedback, please don't hesitate to reach out. We'd love to hear from you!"
+    url="https://wa.me/6281339541611"
+  />
 </MainLayout>
