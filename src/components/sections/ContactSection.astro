@@ -117,17 +117,17 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("contact-form");
+    const form = document.getElementById("contact-form") as HTMLFormElement;
 
     form.addEventListener("submit", function(event) {
       event.preventDefault(); // Prevent the default form submission
 
-      // Gather form data
-      const firstName = document.querySelector("#hs-firstname-contacts").value;
-      const lastName = document.querySelector("#hs-lastname-contacts").value;
-      const email = document.querySelector("#hs-email-contacts").value;
-      const phone = document.querySelector("#hs-phone-number").value;
-      const details = document.querySelector("#hs-about-contacts").value;
+      // Gather form data with type casting
+      const firstName = (document.querySelector("#hs-firstname-contacts") as HTMLInputElement).value;
+      const lastName = (document.querySelector("#hs-lastname-contacts") as HTMLInputElement).value;
+      const email = (document.querySelector("#hs-email-contacts") as HTMLInputElement).value;
+      const phone = (document.querySelector("#hs-phone-number") as HTMLInputElement).value;
+      const details = (document.querySelector("#hs-about-contacts") as HTMLTextAreaElement).value;
 
       // Construct the mailto link
       const mailtoLink = `mailto:shoftimetech@gmail.com?subject=Contact%20Form%20Submission&body=First%20Name:%20${encodeURIComponent(firstName)}%0ALast%20Name:%20${encodeURIComponent(lastName)}%0AEmail:%20${encodeURIComponent(email)}%0APhone:%20${encodeURIComponent(phone)}%0ADetails:%20${encodeURIComponent(details)}`;
@@ -137,3 +137,4 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
     });
   });
 </script>
+
