@@ -470,33 +470,33 @@ declare module 'astro:content' {
   data: InferEntrySchema<"insights">
 } & { render(): Render[".md"] };
 };
-"portfolio": {
-"a765.md": {
-	id: "a765.md";
-  slug: "a765";
+"ports": {
+"porto-1.md": {
+	id: "porto-1.md";
+  slug: "porto-1";
   body: string;
-  collection: "portfolio";
+  collection: "ports";
   data: any
 } & { render(): Render[".md"] };
-"b203.md": {
-	id: "b203.md";
-  slug: "b203";
+"porto-2.md": {
+	id: "porto-2.md";
+  slug: "porto-2";
   body: string;
-  collection: "portfolio";
+  collection: "ports";
   data: any
 } & { render(): Render[".md"] };
-"f303.md": {
-	id: "f303.md";
-  slug: "f303";
+"porto-3.md": {
+	id: "porto-3.md";
+  slug: "porto-3";
   body: string;
-  collection: "portfolio";
+  collection: "ports";
   data: any
 } & { render(): Render[".md"] };
-"t845.md": {
-	id: "t845.md";
-  slug: "t845";
+"porto-4.md": {
+	id: "porto-4.md";
+  slug: "porto-4";
   body: string;
-  collection: "portfolio";
+  collection: "ports";
   data: any
 } & { render(): Render[".md"] };
 };

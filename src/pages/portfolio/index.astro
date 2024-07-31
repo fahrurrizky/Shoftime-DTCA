@@ -1,19 +1,25 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import CardSmallPortfolio from "../../components/ui/cards/CardSmallPortfolio.astro";
-import CardWidePortfolio from "../../components/ui/cards/CardWidePortfolio.astro";
+import FeaturesMajecticMixer from "@/components/sections/features/FeaturesMajecticMixer.astro";
+import FeaturesRabiberes from "@/components/sections/features/FeaturesRabiberes.astro";
+import FeaturesAdminRabiberes from "@/components/sections/features/FeaturesAdminRabiberes.astro";
+import FeaturesBeeyondThePages from "@/components/sections/features/FeaturesBeeyondThePages.astro";
+import featureImage1 from "@images/majesticmixer.png";
+import featureImage2 from "@images/rabiberes.png";
+import featureImage3 from "@images/adminRabiberes.png";
+import featureImage4 from "@images/beeyondthepages.png";
+import majesticMixer from "@/data_files/features/majesticMixer.json";
+import rabiberes from "@/data_files/features/rabiberes.json";
+import adminRabiberes from "@/data_files/features/adminRabiberes.json";
+import beeyondThePages from "@/data_files/features/beeyondThePages.json";
 import HeroSectionAlt from "../../components/sections/landing/HeroSectionAlt.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
 /// Fetching all the portfolio related content and sorting it by main.id
-const portfolio: CollectionEntry<"portfolio">[] = (
-  await getCollection("portfolio")
-).sort(
-  (a: CollectionEntry<"portfolio">, b: CollectionEntry<"portfolio">) =>
-    a.data.main.id - b.data.main.id,
-);
+const insightPosts: CollectionEntry<"ports">[] =
+  await getCollection("ports");
 
 // Define variables for page content
 const title: string = "Projects We Have";
@@ -46,18 +52,45 @@ const pageTitle: string = `Portfolio | ${SITE.title}`;
     </div>
   </section>
   <!--portfolio section-->
-  <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8 my-10">
-    {
-      portfolio.map((portfolio, index) => {
-        const position = index % 4;
-        if (position === 0 || position === 3) {
-          return <CardSmallPortfolio portfolio={portfolio} />;
-        } else {
-          return <CardWidePortfolio portfolio={portfolio} />;
-        }
-      })
-    }
+  <section class="features-slider">
+    <div class="features-slider-item active">
+      <FeaturesMajecticMixer
+        title="POS for Majectic Mixer"
+        src={featureImage1}
+        subTitle="We have created an incredible Point of Sale (POS) or Cashier Application designed to transform retail operations for alcoholic beverage stores from Majestic Mixer. Let's look at the important things."
+        alt="POS for Majectic Mixer"
+        features={majesticMixer}
+      />
+    </div>
+    <div class="features-slider-item">
+      <FeaturesRabiberes
+        title="Platform for Wedding Organizers rabiberes.com"
+        src={featureImage2}
+        subTitle="rabiberes.com is a platform that connects wedding organizers with vendors who can offer their services. It is designed to be user friendly and easy to use, and users can customize whatever vendor they want."
+        alt="Platform for weddings Organizers"
+        features={rabiberes}
+      />
+    </div>
+    <div class="features-slider-item">
+      <FeaturesAdminRabiberes
+        title="Admin Panel for weddings Organizers rabiberes.com"
+        src={featureImage3}
+        subTitle="The admin panel for the platform rabiberes.com provides users with everything they need to manage their wedding. It includes features such as managing vendors, managing orders, managing inventory, and ordering customers."
+        alt="ScrewFast products in floating boxes"
+        features={adminRabiberes}
+      />
+    </div>
+    <div class="features-slider-item">
+      <FeaturesBeeyondThePages
+        title="Blogging Website of Beeyond The Pages"
+        subTitle="Beeyond the Pages is a cutting-edge blog platform designed to empower anyone and everyone. Whether you're a you can use it to share your knowledge, we designed it to be user-friendly and easy to use."
+        src={featureImage4}
+        alt="Blogging Website of Beeyond The Pages"
+        features={beeyondThePages}
+      />
+    </div>
   </section>
+  <!--portfolio section-->
   <HeroSectionAlt
     title="Let's Grow Together"
     subTitle="We're always looking for ways to improve our portfolios and services. If you have any suggestions or feedback, please don't hesitate to reach out. We'd love to hear from you!"
