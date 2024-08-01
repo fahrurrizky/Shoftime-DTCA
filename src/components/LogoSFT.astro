@@ -1,6 +1,10 @@
-<img
+---
+import { Image } from 'astro:assets';
+import shoftime from '/src/components/stst.png';
+---
+<Image
 {...Astro.props}
-      src="/src/components/stst.png"
+      src={shoftime}
       alt="logo"
       style={{
         maxWidth: '100%',

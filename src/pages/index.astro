@@ -13,7 +13,7 @@ import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/FAQ.astro";
-// import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 import heroImage from "@images/webstack.png";
 import faqs from "@data/faqs.json";
 import majesticMixer from "@/data_files/features/majesticMixer.json";
@@ -39,11 +39,11 @@ const avatarSrcs: Array<string> = [
 ---
 
 <MainLayout>
-  <!-- <AnnouncementBanner
+  <AnnouncementBanner
     btnId="dismiss-button"
-    btnTitle="Explore ScrewFast on GitHub"
-    url="https://github.com/mearashadowfax/ScrewFast"
-  /> -->
+    btnTitle="Let's Grow Together"
+    url="mailto:shoftimetech@gmail.com"
+  />
 
   <HeroSection
     title={`Empower Your Business with <span class="text-yellow-500 dark:text-yellow-400">Shoftime\`Tech</span>`}
@@ -58,7 +58,7 @@ const avatarSrcs: Array<string> = [
     starCount={4}
     reviews={`From Over <span class="font-bold">5</span> Reviews`}
     src={heroImage}
-    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    alt="Hero Image for Shoftime\`Tech"
   />
 
   <ClientsSection
@@ -89,7 +89,7 @@ const avatarSrcs: Array<string> = [
         title="Admin Panel for weddings Organizers rabiberes.com"
         src={featureImage3}
         subTitle="The admin panel for the platform rabiberes.com provides users with everything they need to manage their wedding. It includes features such as managing vendors, managing orders, managing inventory, and ordering customers."
-        alt="ScrewFast products in floating boxes"
+        alt="Admin Panel for weddings Organizers"
         features={adminRabiberes}
       />
     </div>

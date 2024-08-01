@@ -2,6 +2,24 @@
 const { title, subTitle } = Astro.props;
 import { Image } from 'astro:assets';
 import javascript from '/public/stackIcon/javascript.png';
+import typescript from '/public/stackIcon/typescript.png';
+import react from '/public/stackIcon/react.png';
+import nextjs from '/public/stackIcon/nextjs.png';
+import expressjs from '/public/stackIcon/expressjs.png';
+import nodejs from '/public/stackIcon/nodejs.png';
+import vuejs from '/public/stackIcon/vuejs.png';
+import mysql from '/public/stackIcon/mysql.png';
+import slack from '/public/stackIcon/slack.png';
+import github from '/public/stackIcon/github.png';
+import notion from '/public/stackIcon/notion.png';
+import git from '/public/stackIcon/git.png';
+import postman from '/public/stackIcon/postman.png';
+import jira from '/public/stackIcon/jira.png';
+import vite from '/public/stackIcon/vite.png';
+import prisma from '/public/stackIcon/prisma.png';
+import mongoDB from '/public/stackIcon/mongoDB.png';
+import mongoose from '/public/stackIcon/mongoose.png';
+
 interface Props {
   title: string;
   subTitle?: string;
@@ -28,42 +46,43 @@ interface Props {
   <div class="slider">
     <div class="slide-track">
       <Image src={javascript} alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/typescript.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/expressjs.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/nodejs.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/vuejs.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/mysql.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/react.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/slack.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/github.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/notion.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/git.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/postman.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/jira.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/vite.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/prisma.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/mongoDB.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/mongoose.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/nextjs.png" alt="logo" class="slide invert-logo"/>
+      <Image src={typescript} alt="logo" class="slide"/>
+      <Image src={react} alt="logo" class="slide"/>
+      <Image src={nextjs} alt="logo" class="slide"/>
+      <Image src={expressjs} alt="logo" class="slide"/>
+      <Image src={nodejs} alt="logo" class="slide"/>
+      <Image src={vuejs} alt="logo" class="slide"/>
+      <Image src={mysql} alt="logo" class="slide"/>
+      <Image src={slack} alt="logo" class="slide"/>
+      <Image src={github} alt="logo" class="slide"/>
+      <Image src={notion} alt="logo" class="slide"/>
+      <Image src={git} alt="logo" class="slide"/>
+      <Image src={postman} alt="logo" class="slide"/>
+      <Image src={jira} alt="logo" class="slide"/>
+      <Image src={vite} alt="logo" class="slide"/>
+      <Image src={prisma} alt="logo" class="slide"/>
+      <Image src={mongoDB} alt="logo" class="slide"/>
+      <Image src={mongoose} alt="logo" class="slide invert-logo"/>
+
       <!-- Duplicate slides for smooth infinite scrolling -->
-      <img src="/public/stackIcon/javascript.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/typescript.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/expressjs.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/nodejs.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/vuejs.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/mysql.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/react.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/slack.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/github.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/notion.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/git.png" alt="logo" class="slide">
-      <img src="/src/images/stackIcon/postman.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/jira.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/vite.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/prisma.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/mongoDB.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/mongoose.png" alt="logo" class="slide"/>
-      <img src="/src/images/stackIcon/nextjs.png" alt="logo" class="slide invert-logo"/>
+      <Image src={javascript} alt="logo" class="slide"/>
+      <Image src={typescript} alt="logo" class="slide"/>
+      <Image src={react} alt="logo" class="slide"/>
+      <Image src={nextjs} alt="logo" class="slide"/>
+      <Image src={expressjs} alt="logo" class="slide"/>
+      <Image src={nodejs} alt="logo" class="slide"/>
+      <Image src={vuejs} alt="logo" class="slide"/>
+      <Image src={mysql} alt="logo" class="slide"/>
+      <Image src={slack} alt="logo" class="slide"/>
+      <Image src={github} alt="logo" class="slide"/>
+      <Image src={notion} alt="logo" class="slide"/>
+      <Image src={git} alt="logo" class="slide"/>
+      <Image src={postman} alt="logo" class="slide"/>
+      <Image src={jira} alt="logo" class="slide"/>
+      <Image src={vite} alt="logo" class="slide"/>
+      <Image src={prisma} alt="logo" class="slide"/>
+      <Image src={mongoDB} alt="logo" class="slide"/>
+      <Image src={mongoose} alt="logo" class="slide invert-logo"/>
     </div>
   </div>
 </section>

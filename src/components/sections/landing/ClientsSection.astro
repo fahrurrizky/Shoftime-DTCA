@@ -1,6 +1,11 @@
 ---
 // Define props from Astro
 const { title, subTitle } = Astro.props;
+import { Image } from 'astro:assets';
+import rabiberes from '/src/components/rabiberes.png';
+import majesticMixer from '/src/components/MM.png';
+import beeyondThePages from '/src/components/btp.png';
+import shoftime from '/src/components/stst.png';
 
 // Define TypeScript interface for props
 interface Props {
@@ -32,28 +37,12 @@ interface Props {
   >
     <!-- Clients Group SVGs -->
     <!-- First -->
-    <img
-    src="https://res.cloudinary.com/df5dc1ahh/image/upload/v1718187064/wugv0gffgt2bpxpttkdg.png"
-    alt="logo"
-    class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"
-    />
+    <Image src={rabiberes} alt="logo" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"/>
     <!-- Second -->
-    <img
-      src="/src/components/MM.png"
-      alt="logo"
-      class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"
-    />
+    <Image src={majesticMixer} alt="logo" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"/>
     <!-- Third -->
-    <img
-      src="/src/components/btp.png"
-      alt="logo"
-      class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"
-    /><span>
+    <Image src={beeyondThePages} alt="logo" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"/>
     <!-- Fourth -->
-    <img
-      src="/src/components/stst.png"
-      alt="logo"
-      class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"
-    />
+    <Image src={shoftime} alt="logo" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"/>
   </div>
 </section>

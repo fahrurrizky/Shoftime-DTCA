@@ -13,7 +13,7 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
-  site: "https://screwfast.uk",
+  site: "https://www.shoftime.tech/",
   image: {
     domains: ["images.unsplash.com"],
   },
@@ -22,7 +22,7 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     starlight({
-      title: "ScrewFast Docs",
+      title: "Shoftime`Tech Docs",
       defaultLocale: "root",
       locales: {
         root: {
@@ -67,7 +67,7 @@ export default defineConfig({
         },
       ],
       social: {
-        github: "https://github.com/mearashadowfax/ScrewFast",
+        github: "https://github.com/shoftime",
       },
       disable404Route: true,
       customCss: ["./src/styles/starlight.css"],
@@ -81,14 +81,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://screwfast.uk" + "/social.webp",
+            content: "https://www.shoftime.tech/" + "/social.webp",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://screwfast.uk" + "/social.webp",
+            content: "https://www.shoftime.tech/" + "/social.webp",
           },
         },
       ],

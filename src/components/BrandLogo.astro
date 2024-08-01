@@ -1,10 +1,15 @@
-<img
-{...Astro.props}
-      src="/src/components/SFTW.png"
-      alt="logo"
-      style={{
-        maxWidth: '100%',
-        minWidth: '150px',
-        height: 'auto',
-      }}
-    />
+---
+    import { Image } from 'astro:assets';
+    import shoftime from '/src/components/SFTW.png';
+    ---
+    <Image
+    {...Astro.props}
+          src={shoftime}
+          alt="logo"
+          style={{
+            maxWidth: '100%',
+            minWidth: '150px',
+            height: 'auto',
+          }}
+        />
+    
