@@ -14,7 +14,7 @@ const footerLinks = [
     links: [
       { name: "Our Team Memory", url: "/lifeAt" },
       { name: "Work Environment", url: "/workEnvironment" },
-      { name: "Sentence from Member", url: "https://sentence-member-shoftime.vercel.app/" },
+      { name: "Sentence from Member", url: "https://sentence.shoftime.tech/" },
     ],
   },
   {
