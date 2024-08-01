@@ -1,6 +1,7 @@
 ---
 const { title, subTitle } = Astro.props;
-
+import { Image } from 'astro:assets';
+import javascript from '/public/stackIcon/javascript.png';
 interface Props {
   title: string;
   subTitle?: string;
@@ -26,7 +27,8 @@ interface Props {
   
   <div class="slider">
     <div class="slide-track">
-      <img src="/public/stackIcon/javascript.png" alt="logo" class="slide"/>
+      <Image src={javascript} alt="logo" class="slide"/>
+      <img src={javascript} alt="logo" class="slide"/>
       <img src="/src/images/stackIcon/typescript.png" alt="logo" class="slide"/>
       <img src="/src/images/stackIcon/expressjs.png" alt="logo" class="slide"/>
       <img src="/src/images/stackIcon/nodejs.png" alt="logo" class="slide"/>
