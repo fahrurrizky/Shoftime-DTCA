@@ -3,7 +3,7 @@ title: "Trust"
 description: "A safe space to share your insights and ideas.
 At Shoftime, we prioritize trust by fostering an environment where every team member feels valued and heard. We believe in creating a secure space for open dialogue, allowing for the free exchange of ideas and insights. This foundation of trust enables us to collaborate effectively and innovate boldly.
 "
-cardImage: "@/images/insights/trust.png"
+cardImage: "https://media.istockphoto.com/id/1409309926/photo/trust-word-on-a-jigsaw-puzzle.jpg?s=612x612&w=0&k=20&c=tY31LoleNPuwv05xDWdNITtQjCowSK0PlnLNEi6RpSU="
 cardImageAlt: "Top view mechanical tools arrangement"
 ---
 In the world of construction, where innovation meets practicality, ScrewFast stands as a beacon of pioneering advancements. For years, this company has been at the forefront of revolutionizing construction through its unwavering commitment to advanced technology and innovative solutions. From skyscrapers to bridges, ScrewFast has left an indelible mark on the industry, shaping the future of construction in ways once thought unimaginable.
