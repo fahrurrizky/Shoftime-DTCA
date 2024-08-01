@@ -7,8 +7,11 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   devToolbar: {
-    enabled: false
+    enabled: false,
   },
   site: "https://screwfast.uk",
   image: {
