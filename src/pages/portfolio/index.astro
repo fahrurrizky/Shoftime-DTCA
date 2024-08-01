@@ -13,13 +13,8 @@ import rabiberes from "@/data_files/features/rabiberes.json";
 import adminRabiberes from "@/data_files/features/adminRabiberes.json";
 import beeyondThePages from "@/data_files/features/beeyondThePages.json";
 import HeroSectionAlt from "../../components/sections/landing/HeroSectionAlt.astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-/// Fetching all the portfolio related content and sorting it by main.id
-const insightPosts: CollectionEntry<"ports">[] =
-  await getCollection("ports");
 
 // Define variables for page content
 const title: string = "Projects We Have";
