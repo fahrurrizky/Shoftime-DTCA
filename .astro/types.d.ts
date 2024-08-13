@@ -470,6 +470,36 @@ declare module 'astro:content' {
   data: InferEntrySchema<"insights">
 } & { render(): Render[".md"] };
 };
+"porto": {
+"a765.md": {
+	id: "a765.md";
+  slug: "a765";
+  body: string;
+  collection: "porto";
+  data: any
+} & { render(): Render[".md"] };
+"b203.md": {
+	id: "b203.md";
+  slug: "b203";
+  body: string;
+  collection: "porto";
+  data: any
+} & { render(): Render[".md"] };
+"f303.md": {
+	id: "f303.md";
+  slug: "f303";
+  body: string;
+  collection: "porto";
+  data: any
+} & { render(): Render[".md"] };
+"t845.md": {
+	id: "t845.md";
+  slug: "t845";
+  body: string;
+  collection: "porto";
+  data: any
+} & { render(): Render[".md"] };
+};
 "products": {
 "a765.md": {
 	id: "a765.md";

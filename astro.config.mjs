@@ -22,7 +22,7 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     starlight({
-      title: "Shoftime`Tech Docs",
+      title: "Shoftime`DTCA Docs",
       defaultLocale: "root",
       locales: {
         root: {

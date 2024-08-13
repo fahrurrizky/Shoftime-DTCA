@@ -1,14 +1,14 @@
 import ogImageSrc from "/src/components/stst.png";
 
 export const SITE = {
-  title: "Shoftime`Tech",
+  title: "Shoftime`DTCA",
   tagline: "We're not exactly the best team, although we build great ones",
   description:
     "Our vision is to become a business partner by understanding our customers' needs and continuing to innovate on their behalf to continue building mutually beneficial relationships.",
   description_short:
     "WE'RE NOT COMPANY, WE'RE THE A TEAM MEET IN THE SHOFT TIME",
   url: "https://www.shoftime.tech/",
-  author: "Shoftime`Tech",
+  author: "Shoftime`DTCA",
 };
 
 export const SEO = {

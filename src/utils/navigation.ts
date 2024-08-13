@@ -22,7 +22,7 @@ const footerLinks = [
     links: [
       { name: "About Us", url: "/about" },
       { name: "Services", url: "/services" },
-      { name: "Careers", url: "#" },
+      { name: "Be Member", url: "#" },
       { name: "Our Team", url: "/our-team" },
     ],
   },
@@ -30,7 +30,7 @@ const footerLinks = [
 // An object of links for social icons
 const socialLinks = {
   linkedin: "https://www.linkedin.com/",
-  instagram: "https://instagram.com/",
+  instagram: "https://www.instagram.com/shoftime_dtca/",
   github: "https://github.com/shoftime?tab=repositories",
   gmail: "mailto:shoftimetech@gmail.com",
   slack: "https://join.slack.com/t/shoftimetech/shared_invite/zt-2nezdkpuo-2NkzcpujA_SUT00_Z6vphQ",

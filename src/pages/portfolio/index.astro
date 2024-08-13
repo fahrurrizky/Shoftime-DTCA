@@ -1,25 +1,18 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import FeaturesMajecticMixer from "@/components/sections/features/FeaturesMajecticMixer.astro";
-import FeaturesRabiberes from "@/components/sections/features/FeaturesRabiberes.astro";
-import FeaturesAdminRabiberes from "@/components/sections/features/FeaturesAdminRabiberes.astro";
-import FeaturesBeeyondThePages from "@/components/sections/features/FeaturesBeeyondThePages.astro";
-import featureImage1 from "@images/majesticmixer.png";
-import featureImage2 from "@images/rabiberes.png";
-import featureImage3 from "@images/adminRabiberes.png";
-import featureImage4 from "@images/beeyondthepages.png";
-import majesticMixer from "@/data_files/features/majesticMixer.json";
-import rabiberes from "@/data_files/features/rabiberes.json";
-import adminRabiberes from "@/data_files/features/adminRabiberes.json";
-import beeyondThePages from "@/data_files/features/beeyondThePages.json";
+import CardSmallPorto from "@components/ui/cards/CardSmallPorto.astro";
+import CardWidePorto from "@components/ui/cards/CardWidePorto.astro";
 import HeroSectionAlt from "../../components/sections/landing/HeroSectionAlt.astro";
 import { SITE } from "@data/constants";
-
+import majesticMixer from "@images/majesticmixer.png";
+import beeyondThePages from "@images/beeyondThepages1.png";
+import rabiberes from "@images/rabiberes1.png";
+import adminRabiberes from "@images/adminRabiberes.png";
 
 // Define variables for page content
 const title: string = "Projects We Have";
 const subTitle: string =
-  "Explore the diverse range of projects we've successfully completed at Shoftime.Our completed projects reflect our ability to tackle complex challenges, deliver exceptional results, and drive success for businesses across various industries. We take pride in our work and are dedicated to continuously pushing the boundaries of what’s possible."
+  "Explore the diverse range of projects we've successfully completed at Shoftime. Our completed projects reflect our ability to tackle complex challenges, deliver exceptional results, and drive success for businesses across various industries. We take pride in our work and are dedicated to continuously pushing the boundaries of what’s possible.";
 
 const pageTitle: string = `Portfolio | ${SITE.title}`;
 ---
@@ -45,50 +38,52 @@ const pageTitle: string = `Portfolio | ${SITE.title}`;
         {subTitle}
       </p>
     </div>
-  </section>
   <!--portfolio section-->
   <section class="features-slider">
-    <div class="features-slider-item active">
-      <FeaturesMajecticMixer
-        title="POS for Majectic Mixer"
-        src={featureImage1}
-        subTitle="We have created an incredible Point of Sale (POS) or Cashier Application designed to transform retail operations for alcoholic beverage stores from Majestic Mixer. Let's look at the important things."
-        alt="POS for Majectic Mixer"
-        features={majesticMixer}
+    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8 mt-10">
+      <!-- Directly use CardSmallPorto and CardWidePorto components -->
+      <CardSmallPorto
+        porto={{
+          title: "The Majestic Mixer",
+          image: majesticMixer,
+          alt: "Majestic Mixer"
+        }}
+        href="/portfolio/majestic-mixer"
       />
-    </div>
-    <div class="features-slider-item">
-      <FeaturesRabiberes
-        title="Platform for Wedding Organizers rabiberes.com"
-        src={featureImage2}
-        subTitle="rabiberes.com is a platform that connects wedding organizers with vendors who can offer their services. It is designed to be user friendly and easy to use, and users can customize whatever vendor they want."
-        alt="Platform for weddings Organizers"
-        features={rabiberes}
+      <CardWidePorto
+        porto={{
+          title: "Beeyond the Pages",
+          image: beeyondThePages,
+          alt: "Beeyond the Pages"
+        }}
+        href="/portfolio/beeyond-the-pages"
       />
-    </div>
-    <div class="features-slider-item">
-      <FeaturesAdminRabiberes
-        title="Admin Panel for weddings Organizers rabiberes.com"
-        src={featureImage3}
-        subTitle="The admin panel for the platform rabiberes.com provides users with everything they need to manage their wedding. It includes features such as managing vendors, managing orders, managing inventory, and ordering customers."
-        alt="Admin Panel for weddings Organizers"
-        features={adminRabiberes}
+      <CardWidePorto
+      porto={{
+        title: "Wedding Website Planner",
+        image: rabiberes,
+        alt: "Rabiberes"
+      }}
+      href="/portfolio/rabi-beres"
       />
-    </div>
-    <div class="features-slider-item">
-      <FeaturesBeeyondThePages
-        title="Blogging Website of Beeyond The Pages"
-        subTitle="Beeyond the Pages is a cutting-edge blog platform designed to empower anyone and everyone. Whether you're a you can use it to share your knowledge, we designed it to be user-friendly and easy to use."
-        src={featureImage4}
-        alt="Blogging Website of Beeyond The Pages"
-        features={beeyondThePages}
+      <CardSmallPorto
+        porto={{
+          title: "Admin Panel for Weddings Organizers",
+          image: adminRabiberes,
+          alt: "Admin Rabiberes"
+        }}
+        href="/portfolio/admin-rabi-beres"
       />
-    </div>
+    </section>
   </section>
+
   <!--portfolio section-->
   <HeroSectionAlt
     title="Let's Grow Together"
     subTitle="We're always looking for ways to improve our portfolios and services. If you have any suggestions or feedback, please don't hesitate to reach out. We'd love to hear from you!"
     url="https://wa.me/6281339541611"
   />
+</section>
+
 </MainLayout>
+

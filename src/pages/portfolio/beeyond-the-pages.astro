@@ -1,0 +1,35 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import FeaturesBeeyondThePages from "@/components/sections/features/FeaturesBeeyondThePages.astro";
+import featureImage4 from "@images/beeyondthepages.png";
+import beeyondThePages from "@/data_files/features/beeyondThePages.json";
+import { SITE } from "@data/constants";
+
+const pageTitle: string = `Portfolio | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+>
+<!--portfolio section-->
+<section class="mx-auto max-w-[85rem] space-y-8 px-4 pt-10 sm:px-6 lg:px-8 2xl:max-w-full">
+  <div class="mx-auto max-w-3xl text-left sm:text-center">
+    <h1
+      class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+    >
+      Detail Porject
+      <span class="text-yellow-500 dark:text-yellow-400">Completed</span>
+    </h1>
+  </div>
+    <div class="features-slider-item">
+      <FeaturesBeeyondThePages
+        title="Blogging Website of Beeyond The Pages"
+        subTitle="Beeyond the Pages is a cutting-edge blog platform designed to empower anyone and everyone. Whether you're a you can use it to share your knowledge, we designed it to be user-friendly and easy to use."
+        src={featureImage4}
+        alt="Blogging Website of Beeyond The Pages"
+        features={beeyondThePages}
+      />
+    </div>
+  </section>
+  <!--portfolio section-->
+</MainLayout>

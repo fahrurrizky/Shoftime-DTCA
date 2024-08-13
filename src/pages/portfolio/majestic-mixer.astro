@@ -1,0 +1,35 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import FeaturesMajecticMixer from "@/components/sections/features/FeaturesMajecticMixer.astro";
+import featureImage1 from "@images/majesticmixer.png";
+import majesticMixer from "@/data_files/features/majesticMixer.json";
+import { SITE } from "@data/constants";
+
+const pageTitle: string = `Portfolio | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+>
+  <!--portfolio section-->
+  <section class="mx-auto max-w-[85rem] space-y-8 px-4 pt-10 sm:px-6 lg:px-8 2xl:max-w-full">
+    <div class="mx-auto max-w-3xl text-left sm:text-center">
+      <h1
+        class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+      >
+        Detail Porject
+        <span class="text-yellow-500 dark:text-yellow-400">Completed</span>
+      </h1>
+    </div>
+    <div class="features-slider-item active">
+      <FeaturesMajecticMixer
+        title="POS for Majectic Mixer"
+        src={featureImage1}
+        subTitle="We have created an incredible Point of Sale (POS) or Cashier Application designed to transform retail operations for alcoholic beverage stores from Majestic Mixer. Let's look at the important things."
+        alt="POS for Majectic Mixer"
+        features={majesticMixer}
+      />
+    </div>
+  </section>
+  <!--portfolio section-->
+</MainLayout>

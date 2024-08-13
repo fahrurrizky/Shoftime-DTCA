@@ -1,0 +1,35 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import FeaturesAdminRabiberes from "@/components/sections/features/FeaturesAdminRabiberes.astro";
+import featureImage3 from "@images/adminRabiberes.png";
+import adminRabiberes from "@/data_files/features/adminRabiberes.json";
+import { SITE } from "@data/constants";
+
+const pageTitle: string = `Portfolio | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+>
+  <!--portfolio section-->
+  <section class="mx-auto max-w-[85rem] space-y-8 px-4 pt-10 sm:px-6 lg:px-8 2xl:max-w-full">
+    <div class="mx-auto max-w-3xl text-left sm:text-center">
+      <h1
+        class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+      >
+        Detail Porject
+        <span class="text-yellow-500 dark:text-yellow-400">Completed</span>
+      </h1>
+    </div>
+    <div class="features-slider-item">
+      <FeaturesAdminRabiberes
+        title="Admin Panel for weddings Organizers rabiberes.com"
+        src={featureImage3}
+        subTitle="The admin panel for the platform rabiberes.com provides users with everything they need to manage their wedding. It includes features such as managing vendors, managing orders, managing inventory, and ordering customers."
+        alt="Admin Panel for weddings Organizers"
+        features={adminRabiberes}
+      />
+    </div>
+  </section>
+  <!--portfolio section-->
+</MainLayout>
