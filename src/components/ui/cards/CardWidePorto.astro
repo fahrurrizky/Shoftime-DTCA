@@ -3,11 +3,7 @@ import { Image } from "astro:assets";
 import Icon from "@components/ui/icons/Icon.astro";
 
 const { porto, href } = Astro.props;
-
-// Define variables for the image and title
-const title: string = porto.title || "Project Title";
-const image: string = porto.image || ""; // Ensure image is defined in porto
-const alt: string = porto.alt || "Project Image"; // Ensure alt is defined in porto
+const { title, image, alt } = porto;
 
 const imageClass =
   "absolute inset-0 h-full w-full object-cover object-center transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110";
