@@ -3,7 +3,7 @@ title: "I wasn't aware that words could hold so much. i didn't know a sentence c
 description: "Lecture & Freelance UI/UX Designer"
 author: "Deliana Ardhitama Erlangga"
 role: "UI/UX Designer & Design Product"
-cardImageAlt: https://ardhitamade.framer.website/
+cardImageAlt: https://ardhitama.framer.website/
 authorImage: "@/images/blog/deliana.png"
 authorImageAlt: "Avatar Description"
 pubDate: 2024-02-06
