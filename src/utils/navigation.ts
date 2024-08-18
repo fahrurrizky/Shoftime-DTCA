@@ -10,7 +10,7 @@ const navBarLinks = [
 // An array of links for footer
 const footerLinks = [
   {
-    section: "LifeAt Shoftime",
+    section: "Part of Shoftime",
     links: [
       { name: "Our Team Memory", url: "/lifeAt" },
       { name: "Work Environment", url: "/workEnvironment" },
