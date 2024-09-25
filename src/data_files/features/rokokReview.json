@@ -1,0 +1,23 @@
+[
+    {
+      "heading": "Personal Touch",
+      "content": "Users personalize their profiles by updating essential information like usernames, emails, and phone numbers – fostering a sense of connection.",
+      "svg": "groups"
+    },
+    {
+      "heading": "Captivating Landing",
+      "content": "Upon accessing the website, users are greeted by a captivating landing page, setting the tone for their engaging exploration.",
+      "svg": "verified"
+    },
+    {
+      "heading": "In-depth Exploration",
+      "content": "Users delve into blog details, getting the full scoop on topics that intrigue them the most",
+      "svg": "books"
+    },
+    {
+      "heading": "List Enhancement",
+      "content": "Users can easily manage their profile page, and can write blogs with various contents arranged at the same time by uploading images according to the blog theme.",
+      "svg": "frame"
+    }
+]
+  

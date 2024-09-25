@@ -1,0 +1,35 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import FeaturesRokokReview from "@/components/sections/features/FeaturesRokokReview.astro";
+import featureImage5 from "@images/rokokMockup.png";
+import rokokReview from "@/data_files/features/rokokReview.json";
+import { SITE } from "@data/constants";
+
+const pageTitle: string = `Portfolio | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+>
+<!--portfolio section-->
+<section class="mx-auto max-w-[85rem] space-y-8 px-4 pt-10 sm:px-6 lg:px-8 2xl:max-w-full">
+  <div class="mx-auto max-w-3xl text-left sm:text-center">
+    <h1
+      class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+    >
+      Detail Project
+      <span class="text-yellow-500 dark:text-yellow-400">Completed</span>
+    </h1>
+  </div>
+    <div class="features-slider-item">
+      <FeaturesRokokReview
+        title="Blog Review Cigarette and Liquids"
+        src={featureImage5}
+        subTitle="Find trusted reviews of cigarettes and liquids in Indonesia. We provide objective information on taste, quality, and ingredients, as well as top recommendations. With regularly updated reviews, we help you stay ahead of the latest industry trends."
+        alt="Blog Review Cigarette and Liquids"
+        features={rokokReview}
+      />
+    </div>
+  </section>
+  <!--portfolio section-->
+</MainLayout>

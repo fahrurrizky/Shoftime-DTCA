@@ -9,6 +9,7 @@ import FeaturesMajecticMixer from "@/components/sections/features/FeaturesMaject
 import FeaturesRabiberes from "@/components/sections/features/FeaturesRabiberes.astro";
 import FeaturesAdminRabiberes from "@/components/sections/features/FeaturesAdminRabiberes.astro";
 import FeaturesBeeyondThePages from "@/components/sections/features/FeaturesBeeyondThePages.astro";
+import FeaturesRokokReview from "@/components/sections/features/FeaturesRokokReview.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
@@ -19,12 +20,14 @@ import faqs from "@data/faqs.json";
 import majesticMixer from "@/data_files/features/majesticMixer.json";
 import rabiberes from "@/data_files/features/rabiberes.json";
 import adminRabiberes from "@/data_files/features/adminRabiberes.json";
+import rokokReview from "@/data_files/features/rokokReview.json";
 import beeyondThePages from "@/data_files/features/beeyondThePages.json";
 import pricing from "@data/pricing.json";
 import featureImage1 from "@images/majesticmixer.png";
 import featureImage2 from "@images/rabiberes.png";
 import featureImage3 from "@images/adminRabiberes.png";
 import featureImage4 from "@images/beeyondthepages.png";
+import featureImage5 from "@images/rokokMockup.png";
 import designProduct from "@images/mockupIphone.png";
 import digitalMarketing from "@images/seo.svg";
 import dashboard from "@images/softwareMockup.png";
@@ -102,6 +105,14 @@ const avatarSrcs: Array<string> = [
         features={beeyondThePages}
       />
     </div>
+    <div class="features-slider-item">
+      <FeaturesRokokReview
+        title="Blog Review Cigarette and Liquids"
+        src={featureImage5}
+        subTitle="Find trusted reviews of cigarettes and liquids in Indonesia. We provide objective information on taste, quality, and ingredients, as well as top recommendations. With regularly updated reviews, we help you stay ahead of the latest industry trends."
+        alt="Blog Review Cigarette and Liquids"
+        features={rokokReview}
+      />
   </section>
   <FeaturesNavs
     title={`Moving Forward with <span class="text-yellow-500 dark:text-yellow-400">Shoftime\`DTCA</span>, We're not exactly a software house, although we build great ones.`}
