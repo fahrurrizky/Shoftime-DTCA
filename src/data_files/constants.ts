@@ -1,12 +1,12 @@
 import ogImageSrc from "/src/components/stst.png";
 
 export const SITE = {
-  title: "Shoftime`DTCA",
-  tagline: "We're not exactly the best team, although we build great ones",
+  title: "Shoftime - Jasa Website Jogja Terbaik",
+  tagline: "Membangun Website Hebat untuk Bisnis Anda di Jogja",
   description:
-    "Our vision is to become a business partner by understanding our customers' needs and continuing to innovate on their behalf to continue building mutually beneficial relationships.",
+    "Shoftime adalah digital creative agency di Jogja yang menawarkan jasa pembuatan website, aplikasi, dan pemasaran digital. Solusi terbaik untuk kebutuhan digital Anda.",
   description_short:
-    "WE'RE NOT COMPANY, WE'RE THE A TEAM MEET IN THE SHOFT TIME",
+    "Shoftime - Solusi Digital Terbaik untuk Website dan Aplikasi Anda di Jogja",
   url: "https://www.shoftime.tech/",
   author: "Shoftime`DTCA",
 };
@@ -17,7 +17,7 @@ export const SEO = {
   structuredData: {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    inLanguage: "en-US",
+    inLanguage: "id-ID",
     "@id": SITE.url,
     url: SITE.url,
     name: SITE.title,
@@ -28,15 +28,19 @@ export const SEO = {
       name: SITE.title,
       description: SITE.description,
     },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE.url}/?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
   },
 };
 
 export const OG = {
-  locale: "en_US",
+  locale: "id_ID",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title}: : We're not exactly the best team, although we build great ones`,
-  description:
-    "Our vision is to become a business partner by understanding our customers' needs and continuing to innovate on their behalf to continue building mutually beneficial relationships.",
+  title: `${SITE.title} | Jasa Pembuatan Website Jogja`,
+  description: SITE.description,
   image: ogImageSrc,
 };
