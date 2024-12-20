@@ -1,12 +1,12 @@
 import ogImageSrc from "/src/components/stst.png";
 
 export const SITE = {
-  title: "Shoftime - Jasa Website Jogja Terbaik",
-  tagline: "Membangun Website Hebat untuk Bisnis Anda di Jogja",
+  title: "Shoftime`DTCA - Jasa Website Jogja",
+  tagline: "Kami membangun solusi digital terbaik di Yogyakarta",
   description:
     "Shoftime adalah digital creative agency di Jogja yang menawarkan jasa pembuatan website, aplikasi, dan pemasaran digital. Solusi terbaik untuk kebutuhan digital Anda.",
   description_short:
-    "Shoftime - Solusi Digital Terbaik untuk Website dan Aplikasi Anda di Jogja",
+    "Kami adalah tim digital terbaik di Shoftime, penyedia jasa website Jogja.",
   url: "https://www.shoftime.tech/",
   author: "Shoftime`DTCA",
 };
@@ -14,6 +14,12 @@ export const SITE = {
 export const SEO = {
   title: SITE.title,
   description: SITE.description,
+  keywords: [
+    "jasa website Jogja",
+    "digital agency Jogja",
+    "pembuatan website",
+    "pemasaran digital",
+  ],
   structuredData: {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -22,17 +28,18 @@ export const SEO = {
     url: SITE.url,
     name: SITE.title,
     description: SITE.description,
-    isPartOf: {
-      "@type": "WebSite",
+    author: {
+      "@type": "Organization",
+      name: SITE.author,
       url: SITE.url,
-      name: SITE.title,
-      description: SITE.description,
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${SITE.url}/?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
+    image: ogImageSrc,
+    keywords: [
+      "jasa website Jogja",
+      "digital agency Jogja",
+      "pembuatan website",
+      "pemasaran digital",
+    ],
   },
 };
 
@@ -40,7 +47,7 @@ export const OG = {
   locale: "id_ID",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title} | Jasa Pembuatan Website Jogja`,
+  title: SITE.title,
   description: SITE.description,
   image: ogImageSrc,
 };
