@@ -1,8 +1,8 @@
 import ogImageSrc from "/src/components/stst.png";
 
 export const SITE = {
-  title: "Shoftime`DTCA - Jasa Website Jogja",
-  tagline: "Kami membangun solusi digital terbaik di Yogyakarta",
+  title: "Shoftime`DTCA",
+  tagline: "We're not exactly the best team, although we build great ones",
   description:
     "Shoftime adalah digital creative agency di Jogja yang menawarkan jasa pembuatan website, aplikasi, dan pemasaran digital. Solusi terbaik untuk kebutuhan digital Anda.",
   description_short:
