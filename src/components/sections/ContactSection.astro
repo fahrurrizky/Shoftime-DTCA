@@ -187,7 +187,7 @@ const formSubTitle: string = "We'll try the best to get back to you!";
       statusText.innerHTML = "Sending...";
 
       try {
-        const res = await fetch("https://api.web3forms.com/submit", {
+        const res = await fetch("/api/contact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
