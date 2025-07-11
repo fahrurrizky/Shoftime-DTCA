@@ -9,16 +9,19 @@ import Icon from "@components/ui/icons/Icon.astro";
 
 // Define the variables that will be used in this component
 const title: string = "Contact us";
-const subTitle: string = "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our team and services.";
+const subTitle: string =
+  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our team and services.";
 const formTitle: string = "Fill in the form below";
-const formSubTitle: string = "We'll get back to you in 1-2 business days.";
+const formSubTitle: string = "We'll try the best to get back to you!";
 ---
 
 <!-- Contact Us -->
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
   <div class="mx-auto max-w-2xl lg:max-w-5xl">
     <div class="text-center">
-      <h1 class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
+      <h1
+        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
+      >
         <span class="text-yellow-500 dark:text-yellow-400">Contact Us</span>
       </h1>
       <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
@@ -28,40 +31,45 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
 
     <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
       <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
-        <h2 class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300">
+        <h2
+          class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300"
+        >
           {formTitle}
         </h2>
         <!-- Form for user input with various input fields.-->
-        <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-        <form id="contact-form">
+        <form id="contact-form" novalidate>
+          <input
+            type="hidden"
+            name="access_key"
+            value="8eb230cc-1878-4db4-a136-5b3c356ca211"
+          />
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="hidden"
+            style="display:none"
+          />
+
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <TextInput
-                id="hs-firstname-contacts"
-                label="First Name"
-                name="hs-firstname-contacts"
-              />
-              <TextInput
-                id="hs-lastname-contacts"
-                label="Last Name"
-                name="hs-lastname-contacts"
-              />
+              <TextInput id="first-name" label="First Name" name="first_name" />
+              <TextInput id="last-name" label="Last Name" name="last_name" />
             </div>
-            <EmailContactInput id="hs-email-contacts" />
-            <PhoneInput id="hs-phone-number" />
-            <TextAreaInput
-              id="hs-about-contacts"
-              label="Details"
-              name="hs-about-contacts"
-            />
+
+            <EmailContactInput id="email" name="email" />
+            <PhoneInput id="phone" name="phone" />
+            <TextAreaInput id="message" label="Details" name="message" />
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Send Message" />
+            <AuthBtn title="Send Message" type="submit" id="submit-btn" />
           </div>
 
           <div class="mt-3 text-center">
-            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+            <p
+              id="form-status"
+              class="text-sm text-neutral-600 dark:text-neutral-400"
+            >
               {formSubTitle}
             </p>
           </div>
@@ -115,26 +123,314 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
   </div>
 </section>
 
+<style>
+  /* Remove the previous CSS that was causing validation messages to show */
+  .error-message {
+    font-size: 0.875rem;
+    color: #ef4444;
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  .border-red-500 {
+    border-color: #ef4444 !important;
+  }
+
+  /* Focus styles */
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #d1d5db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.1);
+  }
+</style>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("contact-form") as HTMLFormElement;
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById(
+      "contact-form"
+    ) as HTMLFormElement | null;
+    const statusText = document.getElementById(
+      "form-status"
+    ) as HTMLElement | null;
 
-    form.addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent the default form submission
+    if (!form || !statusText) return;
 
-      // Gather form data with type casting
-      const firstName = (document.querySelector("#hs-firstname-contacts") as HTMLInputElement).value;
-      const lastName = (document.querySelector("#hs-lastname-contacts") as HTMLInputElement).value;
-      const email = (document.querySelector("#hs-email-contacts") as HTMLInputElement).value;
-      const phone = (document.querySelector("#hs-phone-number") as HTMLInputElement).value;
-      const details = (document.querySelector("#hs-about-contacts") as HTMLTextAreaElement).value;
+    const formSubTitle = "We'll try the best to get back to you!";
 
-      // Construct the mailto link
-      const mailtoLink = `mailto:shoftimetech@gmail.com?subject=Contact%20Form%20Submission&body=First%20Name:%20${encodeURIComponent(firstName)}%0ALast%20Name:%20${encodeURIComponent(lastName)}%0AEmail:%20${encodeURIComponent(email)}%0APhone:%20${encodeURIComponent(phone)}%0ADetails:%20${encodeURIComponent(details)}`;
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
 
-      // Open the mail client with the constructed link
-      window.location.href = mailtoLink;
+      // Clear previous error messages
+      clearErrorMessages();
+
+      // Check if form is valid
+      const isValid = validateForm();
+
+      if (!isValid) {
+        // Only show validation messages when user clicks submit and form is invalid
+        showValidationErrors();
+        statusText.innerHTML = "Please fill in all required fields.";
+        statusText.classList.add("text-red-500");
+        return;
+      }
+      // Show loading state
+      setLoadingState(true);
+
+      // Clear any error styling from status text
+      statusText.classList.remove("text-red-500");
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      const json = JSON.stringify(data);
+
+      statusText.innerHTML = "Sending...";
+
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: json,
+        });
+
+        const result = await res.json();
+
+        if (res.status === 200) {
+          statusText.innerHTML = result.message;
+          statusText.classList.remove("text-red-500");
+          statusText.classList.add("text-green-500");
+          form.reset();
+          clearErrorMessages();
+        } else {
+          statusText.innerHTML = result.message + " | Submission failed.";
+          statusText.classList.add("text-red-500");
+        }
+      } catch (error) {
+        statusText.innerHTML = "Something went wrong!";
+        statusText.classList.add("text-red-500");
+      } finally {
+        // Hide loading state
+        setLoadingState(false);
+      }
+
+      setTimeout(() => {
+        statusText.innerHTML = formSubTitle;
+        statusText.classList.remove("text-green-500", "text-red-500");
+      }, 5000);
+    });
+
+    function setLoadingState(isLoading: boolean) {
+      const loadingSpinner = document.getElementById("loading-spinner");
+      const buttonText = document.getElementById("button-text");
+      const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+      const originalButtonText = "Send Message";
+
+      if (!loadingSpinner || !buttonText || !submitBtn) return;
+
+      if (isLoading) {
+        // Show spinner, hide text, disable button
+        loadingSpinner.classList.remove("hidden");
+        buttonText.textContent = "Sending...";
+        submitBtn.disabled = true;
+        submitBtn.classList.add("opacity-75");
+      } else {
+        // Hide spinner, show text, enable button
+        loadingSpinner.classList.add("hidden");
+        buttonText.textContent = originalButtonText;
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-75");
+      }
+    }
+
+    function validateForm() {
+      const requiredFields = form
+        ? form.querySelectorAll("input[required], textarea[required]")
+        : [];
+      let isValid = true;
+
+      requiredFields.forEach((field) => {
+        const value = (
+          field as HTMLInputElement | HTMLTextAreaElement
+        ).value.trim();
+
+        // Check if field is empty
+        if (!value) {
+          isValid = false;
+          return;
+        }
+
+        // Additional validation for email
+        if (
+          (field as HTMLInputElement).type === "email" &&
+          !isValidEmail(value)
+        ) {
+          isValid = false;
+          return;
+        }
+
+        // Additional validation for phone
+        if (
+          (field as HTMLInputElement).type === "tel" &&
+          !isValidPhone(value)
+        ) {
+          isValid = false;
+          return;
+        }
+      });
+
+      return isValid;
+    }
+
+    function isValidEmail(email: string) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    function isValidPhone(phone: string) {
+      // Basic phone validation - at least 10 digits
+      const phoneRegex = /^\+?[\d\s\-\(\)]{10,}$/;
+      return phoneRegex.test(phone);
+    }
+
+    function showValidationErrors() {
+      const requiredFields = form
+        ? form.querySelectorAll("input[required], textarea[required]")
+        : [];
+
+      requiredFields.forEach((field) => {
+        const value = (
+          field as HTMLInputElement | HTMLTextAreaElement
+        ).value.trim();
+        let isFieldValid = true;
+        let errorMessage = "";
+
+        if (!value) {
+          isFieldValid = false;
+          errorMessage = getEmptyFieldMessage(
+            field as HTMLInputElement | HTMLTextAreaElement
+          );
+        } else if (
+          (field as HTMLInputElement).type === "email" &&
+          !isValidEmail(value)
+        ) {
+          isFieldValid = false;
+          errorMessage = "Please provide a valid email address.";
+        } else if (
+          (field as HTMLInputElement).type === "tel" &&
+          !isValidPhone(value)
+        ) {
+          isFieldValid = false;
+          errorMessage = "Please provide a valid phone number.";
+        }
+
+        if (!isFieldValid) {
+          field.classList.add("border-red-500");
+          showFieldError(
+            field as HTMLInputElement | HTMLTextAreaElement,
+            errorMessage
+          );
+        }
+      });
+    }
+
+    function getEmptyFieldMessage(
+      field: HTMLInputElement | HTMLTextAreaElement
+    ) {
+      const fieldName = field.getAttribute("name") || "";
+      const messages = {
+        first_name: "Please provide your first name.",
+        last_name: "Please provide your last name.",
+        email: "Please provide your email.",
+        phone: "Please provide your phone number.",
+        message: "Please provide your details.",
+      };
+
+      return (
+        messages[fieldName as keyof typeof messages] ||
+        "This field is required."
+      );
+    }
+
+    function showFieldError(
+      field: HTMLInputElement | HTMLTextAreaElement,
+      message: string
+    ) {
+      const fieldContainer = field.closest(".form-group");
+      if (!fieldContainer) return;
+
+      let errorMessage = fieldContainer.querySelector(".error-message");
+
+      if (!errorMessage) {
+        errorMessage = document.createElement("div");
+        errorMessage.className = "error-message text-red-500 text-sm mt-1";
+        fieldContainer.appendChild(errorMessage);
+      }
+
+      errorMessage.textContent = message;
+    }
+
+    function clearErrorMessages() {
+      if (!form) return;
+      const errorMessages = form.querySelectorAll(".error-message");
+      errorMessages.forEach((msg) => msg.remove());
+
+      const fields = form.querySelectorAll("input, textarea");
+      fields.forEach((field) => {
+        field.classList.remove("border-red-500");
+      });
+    }
+
+    // Clear individual field errors when user starts typing
+    const fields = form.querySelectorAll("input, textarea");
+    fields.forEach((field) => {
+      field.addEventListener("input", function (event) {
+        const currentField = event.target;
+        const value = (
+          currentField as HTMLInputElement | HTMLTextAreaElement
+        ).value.trim();
+        let isFieldValid = true;
+
+        // Check if field has value
+        if (!value) {
+          isFieldValid = false;
+        } else {
+          // Additional validation for specific field types
+          if (
+            currentField instanceof HTMLInputElement &&
+            currentField.type === "email" &&
+            !isValidEmail(value)
+          ) {
+            isFieldValid = false;
+          } else if (
+            currentField instanceof HTMLInputElement &&
+            currentField.type === "tel" &&
+            !isValidPhone(value)
+          ) {
+            isFieldValid = false;
+          }
+        }
+
+        if (isFieldValid) {
+          if (currentField) {
+            (
+              currentField as HTMLInputElement | HTMLTextAreaElement
+            ).classList.remove("border-red-500");
+          }
+          const fieldContainer =
+            currentField instanceof HTMLElement
+              ? currentField.closest(".form-group")
+              : null;
+          if (fieldContainer) {
+            const errorMessage = fieldContainer.querySelector(".error-message");
+            if (errorMessage) {
+              errorMessage.remove();
+            }
+          }
+        }
+      });
     });
   });
 </script>
-
