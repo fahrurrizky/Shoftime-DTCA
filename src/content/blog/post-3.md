@@ -2,7 +2,7 @@
 title: "We are what repeatedlly do. Excellence, then, is not an act but a habit."
 description: "Now working at Stechoq Robotika Indonesia"
 author: "M. Fahrur Rizky"
-role: "Founder, Project Management, Web Developer"
+role: "Project Management, Web Developer"
 cardImageAlt: https://fahrurrizky.site/
 authorImage: "@/images/blog/rizky.jpeg"
 authorImageAlt: "Avatar Description"

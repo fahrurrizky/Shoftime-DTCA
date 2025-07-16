@@ -2,7 +2,7 @@
 title: "Better to jump and make a mistake than to sit there too frightened to make a move"
 description: "Freelance Web Developer"
 author: "Andre Adyatmoko"
-role: "Founder, Product Planning, Full Stack Web Developer"
+role: "Product Planning, Full Stack Web Developer"
 cardImageAlt: https://private-cv-project.vercel.app/
 authorImage: "@/images/blog/andre.jpeg"
 authorImageAlt: "Avatar Description"

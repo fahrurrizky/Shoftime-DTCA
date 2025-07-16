@@ -2,7 +2,7 @@
 title: "Our lives are defined by opportunities, even the ones we miss."
 description: "Freelance Web Developer"
 author: "Febry Dharmawan Junior"
-role: "Founder, Full Stack Web Developer"
+role: "Full Stack Web Developer"
 cardImageAlt: https://www.febrydjr.my.id/#intro
 authorImage: "@/images/blog/febry.jpeg"
 authorImageAlt: "Avatar Description"
